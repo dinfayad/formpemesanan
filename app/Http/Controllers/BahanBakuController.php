@@ -17,6 +17,7 @@ class BahanBakuController extends Controller
         BahanBaku::create([
             'nama_bahan' => $request->nama_bahan,
             'merk' => $request->merk,
+            'supplier' => $request->supplier,
             'update_terakhir' => $request->update_terakhir,
             'harga_beli' => $request->harga_beli,
             'keterangan' => $request->keterangan,

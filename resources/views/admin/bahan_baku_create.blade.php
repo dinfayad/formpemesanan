@@ -150,29 +150,24 @@
 
     <h2>Form Bahan Baku</h2>
 
-    <form method="POST" action="/bahan-baku/store">
+    <form method="POST" action="/bahan-baku/create">
         @csrf
         <!-- nanti action diganti ke controller -->
 
         <div class="form-group">
             <label>Nama Bahan Baku</label>
-            <input type="text" name="nama_bahan">
+            <input type="text" name="nama_bahan" placeholder="Masukkan Nama Bahan Baku">
         </div>
 
         <div class="form-group">
     <label>Merk</label>
 
-    <select name="merk">
-        <option value="">-- Pilih Merk --</option>
-        <option value="Trio Jaya">Trio Jaya</option>
-        <option value="Sahabat Print">Sahabat Print</option>
-        <option value="Makmur Stationary">Makmur Stationary</option>
-        <option value="Toko Buku Baru">Toko Buku Baru</option>
-        <option value="Data Teknik">Data Teknik</option>
-        <option value="Master Print">Master Print</option>
-        <option value="Jakarta Globalindo">Jakarta Globalindo</option>
-        <option value="Purnama Percetakan">Purnama Percetakan</option>
-    </select>
+    <input type="text" name="merk" placeholder="Masukkan Merk Bahan Baku">
+</div>
+
+        <div class="form-group">
+    <label>Supplier</label>
+    <input type="text" name="supplier" placeholder="Masukkan Nama Supplier">
 </div>
 
         <div class="form-group">
@@ -182,7 +177,7 @@
 
         <div class="form-group">
             <label>Harga Beli</label>
-            <input type="number" name="harga_beli">
+            <input type="number" name="harga_beli" placeholder="Masukan Harga Beli">
         </div>
 
         <div class="form-group">

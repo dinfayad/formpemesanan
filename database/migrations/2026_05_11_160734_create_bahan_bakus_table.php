@@ -16,6 +16,7 @@ return new class extends Migration
 
         $table->string('nama_bahan');
         $table->string('merk');
+        $table->string('supplier');
         $table->date('update_terakhir');
         $table->integer('harga_beli');
         $table->text('keterangan')->nullable();

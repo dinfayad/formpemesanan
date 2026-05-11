@@ -140,6 +140,7 @@
             <th>No</th>
             <th>Nama Bahan Baku</th>
             <th>Merk</th>
+            <th>Supplier</th>
             <th>Update Terakhir</th>
             <th>Harga Beli</th>
             <th>Keterangan</th>
@@ -151,6 +152,7 @@
             <td>{{ $index + 1 }}</td>
             <td>{{ $item->nama_bahan }}</td>
             <td>{{ $item->merk }}</td>
+            <td>{{ $item->supplier }}</td>
             <td>{{ $item->update_terakhir }}</td>
             <td>Rp {{ number_format($item->harga_beli) }}</td>
             <td>{{ $item->keterangan }}</td>
