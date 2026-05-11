@@ -23,7 +23,8 @@ class BahanBakuController extends Controller
             'keterangan' => $request->keterangan,
         ]);
 
-        return redirect('/bahan-baku/list');
+        return redirect('/bahan-baku/create')
+            ->with('success', 'Data bahan baku berhasil disimpan');
     }
 
     public function list()
