@@ -150,7 +150,7 @@
 
     <h2>Form Bahan Baku</h2>
 
-    <form method="POST" action="/bahan-baku/create">
+    <form method="POST" action="/bahan-baku/store">
         @csrf
         <!-- nanti action diganti ke controller -->
 

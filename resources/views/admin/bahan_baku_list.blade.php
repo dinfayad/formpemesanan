@@ -130,8 +130,8 @@
         <h2>Data Bahan Baku</h2>
 
         <span class="badge">
-            Total Data: 0
-        </span>
+    Total Data: {{ $data->count() }}
+</span>
     </div>
 
     <table>
