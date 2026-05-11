@@ -43,7 +43,8 @@
         }
 
         input,
-        textarea {
+        textarea,
+        select {
             width: 100%;
             padding: 10px;
             border: 1px solid #cbd5e1;
@@ -159,9 +160,20 @@
         </div>
 
         <div class="form-group">
-            <label>Merk</label>
-            <input type="text" name="merk">
-        </div>
+    <label>Merk</label>
+
+    <select name="merk">
+        <option value="">-- Pilih Merk --</option>
+        <option value="Trio Jaya">Trio Jaya</option>
+        <option value="Sahabat Print">Sahabat Print</option>
+        <option value="Makmur Stationary">Makmur Stationary</option>
+        <option value="Toko Buku Baru">Toko Buku Baru</option>
+        <option value="Data Teknik">Data Teknik</option>
+        <option value="Master Print">Master Print</option>
+        <option value="Jakarta Globalindo">Jakarta Globalindo</option>
+        <option value="Purnama Percetakan">Purnama Percetakan</option>
+    </select>
+</div>
 
         <div class="form-group">
             <label>Update Terakhir</label>
