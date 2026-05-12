@@ -26,10 +26,6 @@
             font-size:14px;
         }
 
-        .btn-back:hover{
-            background:#3749a0;
-        }
-
         .btn-add{
             background:#0f172a;
             color:white;
@@ -37,10 +33,6 @@
             text-decoration:none;
             border-radius:5px;
             font-size:14px;
-        }
-
-        .btn-add:hover{
-            background:#1e293b;
         }
 
         .container{
@@ -94,219 +86,233 @@
             font-size:13px;
         }
 
-        .btn-edit:hover{
-            background:#d97706;
-        }
-
-        .btn-delete:hover{
-            background:#b91c1c;
-        }
-
-        .btn-detail{
-            background:#0ea5e9;
-            color:white;
-            padding:6px 10px;
-            border-radius:5px;
-            text-decoration:none;
-            font-size:13px;
+        .btn-edit,
+        .btn-delete{
             display:inline-block;
-            transition:0.3s;
+            margin-right:8px;
         }
-
-        .btn-detail:hover{
-            background:#0284c7;
-        }
-
+        
         .modal{
-    display:none;
-    position:fixed;
-    z-index:999;
-    left:0;
-    top:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.5);
-}
+            display:none;
+            position:fixed;
+            z-index:999;
+            left:0;
+            top:0;
+            width:100%;
+            height:100%;
+            background:rgba(0,0,0,0.5);
+        }
 
-.modal-content{
-    background:white;
-    width:400px;
-    padding:25px;
-    border-radius:10px;
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%, -50%);
-}
+        .modal-content{
+            background:white;
+            width:400px;
+            padding:25px;
+            border-radius:10px;
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%, -50%);
+        }
 
-.modal-content h3{
-    margin-bottom:20px;
-    color:#1e3a8a;
-}
+        .modal-content h3{
+            margin-bottom:20px;
+            color:#1e3a8a;
+        }
 
-.close{
-    float:right;
-    font-size:24px;
-    cursor:pointer;
-}
+        .close{
+            float:right;
+            font-size:24px;
+            cursor:pointer;
+        }
 
-.form-group{
-    margin-bottom:15px;
-}
+        .form-group{
+            margin-bottom:15px;
+        }
 
-.form-group label{
-    display:block;
-    margin-bottom:5px;
-}
+        .form-group label{
+            display:block;
+            margin-bottom:5px;
+        }
 
-.form-group input,
-.form-group select{
-    width:100%;
-    padding:10px;
-    border:1px solid #ccc;
-    border-radius:5px;
-}
+        .form-group input,
+        .form-group select{
+            width:100%;
+            padding:10px;
+            border:1px solid #ccc;
+            border-radius:5px;
+            box-sizing:border-box;
+        }
 
-.delete-box{
-    text-align:center;
-}
+        .form-group input[readonly]{
+            background:#e2e8f0;
+            cursor:not-allowed;
+        }
 
-.delete-action{
-    margin-top:20px;
-    display:flex;
-    gap:10px;
-}
+        .delete-box{
+            text-align:center;
+        }
 
-.btn-cancel{
-    background:#64748b;
-}
+        .delete-action{
+            margin-top:20px;
+            display:flex;
+            gap:10px;
+        }
 
-.btn-delete-confirm{
-    background:#dc2626;
-}
+        .btn-cancel{
+            background:#64748b;
+        }
 
-.btn-cancel,
-.btn-delete-confirm{
-    flex:1;
-    border:none;
-    color:white;
-    padding:10px;
-    border-radius:5px;
-    cursor:pointer;
-}
+        .btn-delete-confirm{
+            background:#dc2626;
+        }
 
-.password-box{
-    position:relative;
-}
+        .btn-cancel,
+        .btn-delete-confirm{
+            flex:1;
+            border:none;
+            color:white;
+            padding:10px;
+            border-radius:5px;
+            cursor:pointer;
+        }
 
-.password-box span{
-    position:absolute;
-    right:15px;
-    top:50%;
-    transform:translateY(-50%);
-    cursor:pointer;
-    font-size:14px;
-    color:#1e3a8a;
-}
+        .password-box{
+            position:relative;
+        }
 
-.btn-save{
-    width:100%;
-    background:#1e3a8a;
-    color:white;
-    border:none;
-    padding:12px;
-    border-radius:6px;
-    cursor:pointer;
-    font-size:15px;
-    font-weight:bold;
-    margin-top:10px;
-    transition:0.3s;
-}
+        .password-box span{
+            position:absolute;
+            right:15px;
+            top:50%;
+            transform:translateY(-50%);
+            cursor:pointer;
+            font-size:16px;
+        }
 
-.btn-save:hover{
-    background:#3749a0;
-}
+        .btn-save{
+            width:100%;
+            background:#1e3a8a;
+            color:white;
+            border:none;
+            padding:12px;
+            border-radius:6px;
+            cursor:pointer;
+            font-size:15px;
+            font-weight:bold;
+            margin-top:10px;
+        }
+
+        .btn-save:hover{
+            background:#3749a0;
+        }
     </style>
 </head>
 <body>
 
-    <div class="topbar">
-        <a href="/dashboard" class="btn-back">← Kembali</a>
+<div class="topbar">
+    <a href="/dashboard" class="btn-back">← Kembali</a>
 
-        <a href="/register" class="btn-add">+ Tambah Akun</a>
-    </div>
+    <a href="/register" class="btn-add">+ Tambah Akun</a>
+</div>
 
-    <div class="container">
+<div class="container">
 
-        <h2>List Akun</h2>
+    <h2>List Akun</h2>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>No</th>
-                    <th>Email</th>
-                    <th>Role</th>
-                    <th>Password</th>
-                    <th>Aksi</th>
-                </tr>
-            </thead>
+    <table>
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Password</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
 
-            <tbody>
+        <tbody>
 
-    @foreach($users as $user)
-    <tr>
-        <td>{{ $loop->iteration }}</td>
-        <td>{{ $user->email }}</td>
-        <td>{{ $user->role }}</td>
-        <td>••••••••</td>
+        @foreach($users as $user)
+        <tr>
+            <td>{{ $loop->iteration }}</td>
+            <td>{{ $user->email }}</td>
+            <td>{{ $user->role }}</td>
+            <td>••••••••</td>
 
-        <td>
-            <a href="#" class="btn-edit" onclick="openEditModal()">Edit</a>
-            <a href="#" class="btn-delete" onclick="openDeleteModal()">Hapus</a>
-            <a href="#" class="btn-detail">Detail</a>
-        </td>
-    </tr>
-    @endforeach
+            <td>
+                <a href="#"
+                    class="btn-edit"
+                    onclick="openEditModal(
+                        '{{ $user->id }}',
+                        '{{ $user->email }}',
+                        '{{ $user->role }}'
+                    )">
+                    Edit
+                </a>
 
-</tbody>
-        </table>
+                <a href="#"
+                class="btn-delete"
+                onclick="openDeleteModal('{{ $user->id }}')">
+                    Hapus
+                </a>
+            </td>
+        </tr>
+        @endforeach
 
-    </div>
+        </tbody>
+    </table>
 
-    <!-- POPUP EDIT -->
+</div>
+
+<!-- MODAL EDIT -->
 <div id="editModal" class="modal">
+
     <div class="modal-content">
 
         <span class="close" onclick="closeEditModal()">&times;</span>
 
         <h3>Edit Akun</h3>
 
-        <form>
+        <form id="editForm" method="POST">
+
+            @csrf
+            @method('PUT')
 
             <div class="form-group">
                 <label>Email</label>
-                <input type="email" id="editEmail">
+
+                <input
+                    type="email"
+                    name="email"
+                    id="editEmail"
+                    readonly>
             </div>
 
             <div class="form-group">
                 <label>Role</label>
 
-                <select id="editRole">
-                    <option value="admin">Admin</option>
-                    <option value="staff">Staff</option>
-                </select>
+                <input
+                    type="text"
+                    name="role"
+                    id="editRole"
+                    readonly>
             </div>
 
             <div class="form-group">
                 <label>Password Baru</label>
 
                 <div class="password-box">
-                    <input 
-                        type="password" 
+
+                    <input
+                        type="password"
+                        name="password"
                         id="editPassword"
                         placeholder="Masukkan password baru">
 
-                    <span id="togglePassword()">👁</span>
+                    <span onclick="togglePassword()">
+                        👁
+                    </span>
+
                 </div>
             </div>
 
@@ -317,47 +323,101 @@
         </form>
 
     </div>
+
 </div>
 
-<!-- POPUP HAPUS -->
+<!-- MODAL DELETE -->
 <div id="deleteModal" class="modal">
+
     <div class="modal-content delete-box">
 
         <h3>Hapus Akun</h3>
 
         <p>Yakin ingin menghapus akun ini?</p>
 
-        <div class="delete-action">
-            <button class="btn-cancel" onclick="closeDeleteModal()">
-                Batal
-            </button>
+        <form id="deleteForm" method="POST">
 
-            <button class="btn-delete-confirm">
-                Hapus
-            </button>
-        </div>
+            @csrf
+            @method('DELETE')
+
+            <div class="delete-action">
+
+                <button
+                    type="button"
+                    class="btn-cancel"
+                    onclick="closeDeleteModal()">
+                    Batal
+                </button>
+
+                <button
+                    type="submit"
+                    class="btn-delete-confirm">
+                    Hapus
+                </button>
+
+            </div>
+
+        </form>
 
     </div>
+
 </div>
 
 <script>
 
-function openEditModal(){
+function openEditModal(id, email, role){
+
     document.getElementById("editModal").style.display = "block";
+
+    document.getElementById("editEmail").value = email;
+    document.getElementById("editRole").value = role;
+
+    document.getElementById("editPassword").value = "";
+
+    document.getElementById("editForm").action = "/user/" + id;
 }
 
 function closeEditModal(){
     document.getElementById("editModal").style.display = "none";
 }
 
-function openDeleteModal(){
+function openDeleteModal(id){
+
     document.getElementById("deleteModal").style.display = "block";
+
+    document.getElementById("deleteForm").action = "/user/" + id;
 }
 
 function closeDeleteModal(){
     document.getElementById("deleteModal").style.display = "none";
 }
 
+function togglePassword(){
+
+    let passwordInput = document.getElementById("editPassword");
+
+    if(passwordInput.type === "password"){
+        passwordInput.type = "text";
+    }else{
+        passwordInput.type = "password";
+    }
+}
+
+window.onclick = function(event){
+
+    let editModal = document.getElementById("editModal");
+    let deleteModal = document.getElementById("deleteModal");
+
+    if(event.target == editModal){
+        closeEditModal();
+    }
+
+    if(event.target == deleteModal){
+        closeDeleteModal();
+    }
+}
+
 </script>
+
 </body>
 </html>

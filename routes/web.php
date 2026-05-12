@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\AuthController;
 use App\Models\User;
 use App\Http\Controllers\BahanBakuController;
+use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return view('login');
@@ -63,6 +64,9 @@ Route::get('/akun-list', function () {
 
     return view('admin.akun_list', compact('users'));
 });
+
+Route::put('/user/{id}', [UserController::class, 'update']);
+Route::delete('/user/{id}', [UserController::class, 'destroy']);
 
 Route::get('/listpending', function () {
     return view('form.listpending'); 
