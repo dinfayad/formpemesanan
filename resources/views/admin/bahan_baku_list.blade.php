@@ -113,6 +113,75 @@
         .btn-delete:hover {
             background: #b91c1c;
         }
+
+        .modal{
+    display:none;
+    position:fixed;
+    z-index:999;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.5);
+}
+
+.modal-content{
+    background:white;
+    width:450px;
+    max-height:90vh;
+    overflow-y:auto;
+    padding:25px;
+    border-radius:10px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+}
+
+.close{
+    float:right;
+    font-size:24px;
+    cursor:pointer;
+}
+
+.form-group{
+    margin-bottom:15px;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:5px;
+}
+
+.form-group input,
+.form-group textarea{
+    width:100%;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:5px;
+    box-sizing:border-box;
+}
+
+.form-group input[readonly]{
+    background:#e2e8f0;
+    cursor:not-allowed;
+}
+
+.btn-save{
+    width:100%;
+    background:#1e3a8a;
+    color:white;
+    border:none;
+    padding:12px;
+    border-radius:6px;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:bold;
+}
+
+.btn-save:hover{
+    background:#3749a0;
+}
     </style>
 </head>
 
@@ -139,6 +208,8 @@
         <tr>
             <th>No</th>
             <th>Nama Bahan Baku</th>
+            <th>Jenis</th>
+            <th>Ukuran</th>
             <th>Merk</th>
             <th>Supplier</th>
             <th>Update Terakhir</th>
@@ -151,6 +222,8 @@
         <tr>
             <td>{{ $index + 1 }}</td>
             <td>{{ $item->nama_bahan }}</td>
+            <td>{{ $item->jenis }}</td>
+            <td>{{ $item->ukuran }}</td>
             <td>{{ $item->merk }}</td>
             <td>{{ $item->supplier }}</td>
             <td>{{ $item->update_terakhir }}</td>
@@ -160,9 +233,24 @@
             <td>
                 <div class="aksi">
 
-                    <a href="/bahan-baku/edit/{{ $item->id }}" class="btn-edit">
-                        Edit
-                    </a>
+            <button
+    type="button"
+    class="btn-edit"
+    onclick="openEditModal(
+        '{{ $item->id }}',
+        '{{ $item->nama_bahan }}',
+        '{{ $item->jenis }}',
+        '{{ $item->ukuran }}',
+        '{{ $item->merk }}',
+        '{{ $item->supplier }}',
+        '{{ $item->update_terakhir }}',
+        '{{ $item->harga_beli }}',
+        '{{ $item->keterangan }}'
+    )">
+
+    Edit
+
+</button>
 
                     <form action="/bahan-baku/delete/{{ $item->id }}" method="POST">
                         @csrf
@@ -189,6 +277,149 @@
     </table>
 
 </div>
+
+<!-- POPUP EDIT -->
+<div id="editModal" class="modal">
+
+    <div class="modal-content">
+
+        <span class="close" onclick="closeEditModal()">
+            &times;
+        </span>
+
+        <h3>Edit Bahan Baku</h3>
+
+        <form id="editForm" method="POST">
+
+            @csrf
+            @method('PUT')
+
+            <div class="form-group">
+                <label>Nama Bahan Baku</label>
+
+                <input
+                    type="text"
+                    id="editNama"
+                    readonly>
+            </div>
+
+            <div class="form-group">
+                <label>Jenis</label>
+
+                <input
+                    type="text"
+                    id="editJenis"
+                    readonly>
+            </div>
+
+            <div class="form-group">
+                <label>Ukuran</label>
+
+                <input
+                    type="text"
+                    id="editUkuran"
+                    readonly>
+            </div>
+
+            <div class="form-group">
+                <label>Merk</label>
+
+                <input
+                    type="text"
+                    id="editMerk"
+                    readonly>
+            </div>
+
+            <div class="form-group">
+                <label>Supplier</label>
+
+                <input
+                    type="text"
+                    id="editSupplier"
+                    readonly>
+            </div>
+
+            <div class="form-group">
+                <label>Update Terakhir</label>
+
+                <input
+                    type="date"
+                    name="update_terakhir"
+                    id="editUpdate">
+            </div>
+
+            <div class="form-group">
+                <label>Harga Beli</label>
+
+                <input
+                    type="number"
+                    name="harga_beli"
+                    id="editHarga">
+            </div>
+
+            <div class="form-group">
+                <label>Keterangan</label>
+
+                <textarea
+                    name="keterangan"
+                    id="editKeterangan"
+                    rows="3"></textarea>
+            </div>
+
+            <button type="submit" class="btn-save">
+                Simpan
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+<script>
+
+function openEditModal(
+    id,
+    nama,
+    jenis,
+    ukuran,
+    merk,
+    supplier,
+    updateTerakhir,
+    harga,
+    keterangan
+){
+
+    document.getElementById("editModal").style.display = "block";
+
+    document.getElementById("editNama").value = nama;
+    document.getElementById("editJenis").value = jenis;
+    document.getElementById("editUkuran").value = ukuran;
+    document.getElementById("editMerk").value = merk;
+    document.getElementById("editSupplier").value = supplier;
+
+    document.getElementById("editUpdate").value = updateTerakhir;
+    document.getElementById("editHarga").value = harga;
+    document.getElementById("editKeterangan").value = keterangan;
+
+    document.getElementById("editForm").action =
+        "/bahan-baku/update/" + id;
+}
+
+function closeEditModal(){
+
+    document.getElementById("editModal").style.display = "none";
+}
+
+window.onclick = function(event){
+
+    let modal = document.getElementById("editModal");
+
+    if(event.target == modal){
+        closeEditModal();
+    }
+}
+
+</script>
 
 </body>
 </html>

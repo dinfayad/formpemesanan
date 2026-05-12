@@ -16,6 +16,8 @@ class BahanBakuController extends Controller
     {
         BahanBaku::create([
             'nama_bahan' => $request->nama_bahan,
+            'jenis' => $request->jenis,
+            'ukuran' => $request->ukuran,
             'merk' => $request->merk,
             'supplier' => $request->supplier,
             'update_terakhir' => $request->update_terakhir,
@@ -39,5 +41,24 @@ class BahanBakuController extends Controller
     BahanBaku::findOrFail($id)->delete();
 
     return redirect('/bahan-baku/list');
+}
+public function edit($id)
+{
+    $item = BahanBaku::findOrFail($id);
+
+    return view('bahan_baku.edit', compact('item'));
+}
+
+public function update(Request $request, $id)
+{
+    $item = BahanBaku::findOrFail($id);
+
+    $item->update_terakhir = $request->update_terakhir;
+    $item->harga_beli = $request->harga_beli;
+
+    $item->save();
+
+    return redirect('/bahan-baku/list')
+        ->with('success', 'Data berhasil diupdate');
 }
 }

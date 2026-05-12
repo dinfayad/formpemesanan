@@ -160,6 +160,16 @@
         </div>
 
         <div class="form-group">
+            <label>Jenis</label>
+            <input type="text" name="jenis" placeholder="Masukkan Jenis Bahan Baku">
+        </div>
+
+        <div class="form-group">
+            <label>Ukuran</label>
+            <input type="text" name="ukuran" placeholder="Masukkan Ukuran Bahan Baku">
+        </div>
+
+        <div class="form-group">
     <label>Merk</label>
 
     <input type="text" name="merk" placeholder="Masukkan Merk Bahan Baku">

@@ -15,10 +15,12 @@ return new class extends Migration
         $table->id();
 
         $table->string('nama_bahan');
-        $table->string('merk');
-        $table->string('supplier');
+        $table->string('jenis');
+        $table->string('ukuran')->nullable();
+        $table->string('merk')->nullable();
+        $table->string('supplier')->nullable();
         $table->date('update_terakhir');
-        $table->integer('harga_beli');
+        $table->integer('harga_beli')->nullable();
         $table->text('keterangan')->nullable();
 
         $table->timestamps();

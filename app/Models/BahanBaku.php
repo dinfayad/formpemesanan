@@ -8,6 +8,8 @@ class BahanBaku extends Model
 {
     protected $fillable = [
         'nama_bahan',
+        'jenis',
+        'ukuran',
         'merk',
         'supplier',
         'update_terakhir',
