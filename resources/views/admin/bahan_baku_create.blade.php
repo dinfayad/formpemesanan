@@ -156,7 +156,7 @@
     </a>
 
     <div style="display: flex; gap: 10px;">
-    <a href="#" class="btn-database">
+    <a href="/dbase" class="btn-database">
         Cek DATABASE
     </a>
 

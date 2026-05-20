@@ -55,6 +55,10 @@ Route::delete('/bahan-baku/delete/{id}', [BahanBakuController::class, 'delete'])
 Route::get('/bahan-baku/edit/{id}', [BahanBakuController::class, 'edit']);
 Route::put('/bahan-baku/update/{id}', [BahanBakuController::class, 'update']);
 
+Route::get('/dbase', function () {
+    return view('admin.dbase');
+});
+
 Route::get('/register', function () {
     return view('admin.akun_create');
 });
