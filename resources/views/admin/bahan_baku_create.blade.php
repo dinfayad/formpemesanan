@@ -101,6 +101,20 @@
             background: #3749a0;
         }
 
+        .btn-database {
+            display: inline-block;
+            background: #64748b;
+            color: white;
+            padding: 8px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .btn-database:hover {
+            background: #475569;
+        }
+
         .btn-account {
             display: inline-block;
             background: #0f172a;
@@ -141,9 +155,15 @@
         ← Kembali ke Dashboard
     </a>
 
+    <div style="display: flex; gap: 10px;">
+    <a href="#" class="btn-database">
+        Cek DATABASE
+    </a>
+
     <a href="/akun-list" class="btn-account">
         Cek Akun
     </a>
+    </div>
 </div>
 
 <div class="container">
