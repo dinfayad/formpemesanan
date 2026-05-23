@@ -10,7 +10,6 @@ return new class extends Migration
     {
         Schema::create('daftar_konsumen', function (Blueprint $table) {
             $table->id();
-            $table->integer('no');                   // Nomor urut
             $table->string('instansi');              // IPB Press, Konsumen Luar, BLST/IPB
             $table->enum('tipe', ['Fix', 'Variable'])->default('Fix');
             $table->timestamps();

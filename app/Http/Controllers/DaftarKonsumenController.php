@@ -9,13 +9,12 @@ class DaftarKonsumenController extends Controller
 {
     public function index()
     {
-        return response()->json(DaftarKonsumen::orderBy('no')->get());
+        return response()->json(DaftarKonsumen::all());
     }
 
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'no'       => 'required|integer',
             'instansi' => 'nullable|string|max:255',
             'tipe'     => 'nullable|in:Fix,Variable',
         ]);

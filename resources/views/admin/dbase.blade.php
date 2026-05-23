@@ -223,11 +223,7 @@
 
 {{-- TOPBAR --}}
 <div class="topbar">
-    <a href="/dashboard" class="btn btn-back">← Kembali ke Dashboard</a>
-    <div class="topbar-right">
-        <a href="#" class="btn btn-db">Cek DATABASE</a>
-        <a href="/akun-list" class="btn btn-akun">Cek Akun</a>
-    </div>
+    <a href="/bahan-baku/create" class="btn btn-back">← Kembali</a>
 </div>
 
 <div class="container">
@@ -353,8 +349,7 @@ const TABLES = [
         label: 'Daftar Konsumen',
         route: '/daftar-konsumen',
         fields: [
-            { name: 'no',       label: 'No',       type: 'number', placeholder: '1', required: true },
-            { name: 'instansi', label: 'Instansi', type: 'text',   placeholder: 'e.g. IPB Press' },
+            { name: 'instansi', label: 'Instansi', type: 'text',   placeholder: 'e.g. IPB Press', required: true },
             { name: 'tipe',     label: 'Tipe',     type: 'select', options: ['Fix', 'Variable'] },
         ]
     },

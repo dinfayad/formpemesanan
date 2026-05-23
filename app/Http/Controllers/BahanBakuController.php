@@ -54,7 +54,8 @@ public function update(Request $request, $id)
     $item = BahanBaku::findOrFail($id);
 
     $item->update_terakhir = $request->update_terakhir;
-    $item->harga_beli = $request->harga_beli;
+    $item->harga_beli      = $request->harga_beli;
+    $item->keterangan      = $request->keterangan;
 
     $item->save();
 

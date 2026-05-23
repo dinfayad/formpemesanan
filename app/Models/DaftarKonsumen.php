@@ -9,7 +9,6 @@ class DaftarKonsumen extends Model
     protected $table = 'daftar_konsumen';
 
     protected $fillable = [
-        'no',
         'instansi',
         'tipe',
     ];
